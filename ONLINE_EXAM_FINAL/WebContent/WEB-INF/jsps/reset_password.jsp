@@ -38,7 +38,10 @@
 			<table class="form_table">
 				<tr>
 					<td class="form_field_label">Email Id:</td>
-					<td class="form_field_label">${mailTo}</td>
+					<td><input type="email" class="form_input" id="loginId"
+						name="email" pattern="[a-z0-9._]+@[a-z0-9._]+\.[a-z]{2,3}$"
+						placeholder="Enter your Email id"> <br> <label
+						id="loginId_error" class="error_fields"></label></td>
 				</tr>
 				<tr>
 					<td class="form_field_label">New Password:</td>

@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,7 +70,7 @@ public class RegistrationController {
 	public ModelAndView resetNewPassword(HttpServletRequest request)
 	{
 		ModelAndView modelAndView = new ModelAndView();
-		String email_id = request.getParameter("email");
+		String email_id =request.getParameter("email");
 		String password = request.getParameter("password");
 		try {
 			service.resetPassword(email_id, password);

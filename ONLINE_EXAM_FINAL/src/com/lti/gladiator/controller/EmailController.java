@@ -40,13 +40,8 @@ public class EmailController {
 		emailMessage = "Click on the link to reset your password: http://192.168.100.122:5080/ONLINE_EXAM/reset_password.htm";
 		emailToRecipient = mailTo;
 		
-		session=request.getSession(true);
-		session.setAttribute("mailTo", mailTo);
-		System.out.println(session.getAttribute("mailTo"));
-
 		mailSenderObj.send(new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
-
 				MimeMessageHelper mimeMsgHelperObj = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 				mimeMsgHelperObj.setTo(emailToRecipient);
 				mimeMsgHelperObj.setFrom(emailFromRecipient);
